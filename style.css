@@ -24,6 +24,7 @@ main {
     "area_blue"
     "area_white2"
     ;
+    margin: 10%;
 }
 
 .card {
@@ -99,7 +100,7 @@ main {
         "area_violet area_violet area_grey area_white2"
         "area_white1 area_blue area_blue area_white2"
         ;
-        margin: 10%;
+        
     }
 
 }
