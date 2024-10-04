@@ -1,0 +1,105 @@
+:root {
+    --moderateViolet: hsl(263, 55%, 52%);
+    --lightViolet: #a775f1;
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --LightGray: hsl(0, 0%, 81%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed'; /*Weights: 500, 600 */
+}
+body {
+    background-color: var(--LightGrayishBlue);
+}
+main {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat (5, auto);
+    grid-template-areas: 
+    "area_violet"
+    "area_grey"
+    "area_white1"
+    "area_blue"
+    "area_white2"
+    ;
+}
+
+.card {
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    box-shadow: 0.5rem 0.5rem 1rem var(--LightGray);
+}
+
+.card img {
+    border-radius: 50%;
+    width: clamp(1.5rem, 1.5rem + 5vw, 3rem);
+    height: clamp(1.5rem, 1.5rem + 5vw, 3rem);
+    object-fit: cover;
+}
+
+.card__author {
+    display: flex;
+    align-items: center;
+}
+
+.card__author p {
+    margin: 0 1rem;
+}
+
+.card__name {
+    font-weight: 600;
+}
+
+.card--violet {
+    grid-area: area_violet;
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
+    background-color: var(--moderateViolet);
+    color: var(--White);
+}
+
+.card--violet .card__status, .card--violet > .card__testimonial {
+    color: var(--lightViolet);
+}
+.card--violet .card__author img, .card--blue .card__author img {
+    border: 1px solid var(--lightViolet);
+}
+.card--grey {
+    grid-area: area_grey;
+    background-color: var(--veryDarkGrayishBlue);
+    color: var(--White);
+}
+
+.card--white1 {
+    grid-area: area_white1;
+    background-color: var(--White);
+    color: var(--veryDarkGrayishBlue);
+}
+
+.card--blue {
+    grid-area: area_blue;
+    background-color: var(--veryDarkBlackishBlue);
+    color: var(--White);
+}
+
+.card--white2 {
+    grid-area: area_white2;
+    background-color: var(--White);
+    color: var(--veryDarkGrayishBlue);
+}
+
+@media (min-width: 40em) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: 
+        "area_violet area_violet area_grey area_white2"
+        "area_white1 area_blue area_blue area_white2"
+        ;
+        margin: 10%;
+    }
+
+}
